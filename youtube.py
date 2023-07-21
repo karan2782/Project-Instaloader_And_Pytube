@@ -1,31 +1,37 @@
 from pytube import YouTube
-import os
 
-# where to save
-SAVE_PATH = "D:"  # to_do
 
-link of the video to be downloaded
-link = "https://www.youtube.com/watch?v=xWOoBJUqlbI"
+link = "https://www.youtube.com/watch?v=VLXcWXyrUMM"
+youtube_c = YouTube(link)
+videos = youtube_c.streams.all()  # for video
+audios = youtube_c.streams.filter(only_audio=True)  # for audio
 
-try:
-    # object creation using YouTube
-    # which was imported in the beginning
-    yt = YouTube(link)
+vid = list(enumerate(videos))
+aud = list(enumerate(audios))
 
-    # Get all available video streams for the video
-    video_streams = yt.streams.filter(file_extension='mp4')
+while True:
+    print("If you want to download video enter |v| \n If you want to download audio enter |a| \n And If you dont't want to download anything so enter |not|: ")
+    choice = input()
+    if choice=="v":
+        for i in vid:
+            print(i)
+        print()
 
-    # Choose the first stream (you can modify this logic based on your preferences)
-    if video_streams:
-        d_video = video_streams[0]
+        strm_video = int(input("enter stream of video: "))
+        videos[strm_video].download()
+        print("Video download Successful!")
 
-        Download the video and set the filename
-        d_video.download(output_path=SAVE_PATH, filename= "gVideo")
-        print("Download complete!")
+    elif choice == "a":
+        for i in aud:
+            print(i)
+        print()
+
+        strm_audio = int(input("enter stream of audio: "))
+        audios[strm_audio].download()
+        print("Audio Download Successful!")
+    elif choice == "not":
+        break
     else:
-        print("No mp4 video streams found.")
+        print("Enter valid entries")
 
-except Exception as e:
-    print("An error occurred:", e)
-
-print('Task Completed!')
+print("--Welcome--")
