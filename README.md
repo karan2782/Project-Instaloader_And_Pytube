@@ -9,5 +9,14 @@ In this project used two libraries, one is instaloader which is downloading ista
 ![App Screenshot](https://github.com/karan2782/Project-Instaloader_And_Pytube/blob/main/Screenshot%202024-02-23%20171903.png)
 #### It is downloading video from youtube.
 
-### Tech Stack of this project is python.
+
+
+
+#### Here downloading Instagram content to import instaloader library.
+![App Screenshot](https://github.com/karan2782/Project-Instaloader_And_Pytube/commit/2c25a24f7a47dada8d2387cb173c104b4f598378)
+#### Firstly this program takes input from the user and then press enter.
+#### It will be downloaded instagram content.
+
+
+### Tech Stack of these projects are python.
 
