@@ -1,7 +1,7 @@
 from pytube import YouTube
 
 
-link = "https://www.youtube.com/watch?v=VLXcWXyrUMM"
+link = input("Enter a url: ")
 youtube_c = YouTube(link)
 videos = youtube_c.streams.all()  # for video
 audios = youtube_c.streams.filter(only_audio=True)  # for audio
